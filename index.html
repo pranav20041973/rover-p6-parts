@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rover P6 Car Parts | Classic Car Components</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Rover P6 Parts</h1>
+    <input type="text" id="searchInput" placeholder="Search P6 parts... (Ctrl + /)" />
+    <div class="cart-icon" id="cartIcon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount">0</span>
+    </div>
+  </header>
+
+  <aside class="sidebar">
+    <h3>Categories</h3>
+    <ul>
+      <li onclick="filterCategory('All')">All Parts</li>
+      <li onclick="filterCategory('Brakes')">Brakes</li>
+      <li onclick="filterCategory('Steering')">Steering</li>
+      <li onclick="filterCategory('Engine')">Engine</li>
+      <li onclick="filterCategory('Suspension')">Suspension</li>
+      <li onclick="filterCategory('Exhaust')">Exhaust</li>
+      <li onclick="filterCategory('Fuel System')">Fuel System</li>
+    </ul>
+    
+    <div class="contact-info">
+      <h3>Contact Us</h3>
+      <p><i class="fas fa-phone"></i> 8055XXXXXX</p>
+      <p><i class="fas fa-envelope"></i> pranavxxxxxxxx@gmail.com</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div id="mainContent">
+      <div class="intro">
+        <h2>Genuine Rover P6 Parts</h2>
+        <p>Quality parts for your classic Rover P6 2000, 2200, and 3500 models</p>
+      </div>
+      <div id="productList" class="product-list"></div>
+    </div>
+    
+    <div id="productDetails" class="product-details hidden">
+      <button class="back-btn" onclick="showProductList()">
+        <i class="fas fa-arrow-left"></i> Back to Products
+      </button>
+      <div class="details-content">
+        <img id="detailImage" src="" alt="Product Image" />
+        <div class="detail-info">
+          <h3 id="detailName"></h3>
+          <div class="detail-category" id="detailCategory"></div>
+          <div class="detail-price" id="detailPrice"></div>
+          <div class="detail-stock" id="detailStock"></div>
+          <p id="detailDescription"></p>
+          <div class="quantity-control">
+            <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+            <input type="number" id="productQuantity" value="1" min="1" max="10">
+            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+          </div>
+          <div class="buttons">
+            <button class="add-btn" onclick="addToCart()">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="buy-btn" onclick="buyNow()">
+              <i class="fas fa-bolt"></i> Buy Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cartModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><i class="fas fa-shopping-cart"></i> Your Shopping Cart</h3>
+          <span class="close" onclick="closeCart()">&times;</span>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0.00</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">
+          <i class="fas fa-credit-card"></i> Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div id="notification" class="notification hidden"></div>
+
+  <script src="script12.js"></script>
+</body>
+</html>
